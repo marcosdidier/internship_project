@@ -28,7 +28,7 @@ class Tarefa:
         cursor.execute("""
         SELECT tarefas.id, tarefas.titulo, tarefas.status, usuarios.nome
         FROM tarefas
-        JOIN usuarios ON tarefas.usuario_id = usuarios_id
+        JOIN usuarios ON tarefas.usuario_id = usuarios.id
         """)
 
         tarefas = cursor.fetchall()
@@ -43,6 +43,12 @@ class Tarefa:
         
         conn = sqlite3.connect("task_manager.db")
         cursor = conn.cursor()
+
+        cursor.execute("SELECT id FROM tarefas WHERE id = ?", (id_tarefa,))
+        if not cursor.fetchone():
+            print("Tarefa não encontrada!")
+            return
+        
 
         cursor.execute("UPDATE tarefas SET status = ? WHERE id = ?", (novo_status, id_tarefa))
         conn.commit()
