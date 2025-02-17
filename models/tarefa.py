@@ -1,7 +1,7 @@
 import sqlite3
 from models.usuario import Usuario
 
-class Tarefas:
+class Tarefa:
     OPCOES_STATUS = ["Pendente", "Em andamento", "Concluída"]
 
     @staticmethod
@@ -37,7 +37,7 @@ class Tarefas:
     
     @staticmethod
     def atualizar_status(id_tarefa, novo_status):
-        if novo_status not in Tarefas.OPCOES_STATUS:
+        if novo_status not in Tarefa.OPCOES_STATUS:
             print("Status inválido!")
             return
         
@@ -48,11 +48,3 @@ class Tarefas:
         conn.commit()
         conn.close()
         print(f"Status da tarefa {id_tarefa} atualizado para {novo_status}")
-
-        
-        
-
-    
-
-
-        
