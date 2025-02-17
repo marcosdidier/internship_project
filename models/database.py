@@ -24,3 +24,5 @@ cursor.execute("""
 
 conn.commit()
 conn.close()
+
+print("Criado com sucesso")
