@@ -34,5 +34,9 @@ class Usuario:
         cursor.execute("SELECT * FROM usuarios WHERE id = ?", (id_usuario,))
         usuario = cursor.fetchone()
 
+        if usuario is None:
+            print("Usuário não encontrado!")
+            return None
+
         conn.close()
         return usuario
