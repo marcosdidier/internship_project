@@ -4,7 +4,7 @@ from utils.exportador import exportar_json
 
 def main():
     while True:
-        print("\n📌 MENU DO SISTEMA 📌")
+        print("SELECIONE ALGUMA DAS OPÇÕES A SEGUIR:")
         print("1 - Cadastrar Usuário")
         print("2 - Listar Usuários")
         print("3 - Criar Tarefa")
