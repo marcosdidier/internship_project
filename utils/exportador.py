@@ -6,9 +6,9 @@ def exportar_json(arquivo = "data/tasks.json"):
     cursor = conn.cursor()
 
     cursor.execute("""
-    SELECT tarefas.id, tarefas.titulo, tarefas.descricao, tarefas.status, usuarios.nome, usuarios,email
+    SELECT tarefas.id, tarefas.titulo, tarefas.descricao, tarefas.status, usuarios.nome, usuarios.email
     FROM tarefas
-    JOIN usuarios ON tarefas.usuario_id = usuarios_id
+    JOIN usuarios ON tarefas.usuario_id = usuarios.id
     """)
 
     tarefas = [
