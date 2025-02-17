@@ -16,21 +16,21 @@ def main():
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            Usuario.cadastrar(input("Nome: "), input("Email: "))
+            Usuario.cadastrar(nome = input("Nome: "), email = input("Email: "))
 
         elif opcao == "2":
             for usuario in Usuario.listar():
                 print(usuario)
 
         elif opcao == "3":
-            Tarefa.criar(input("Título: "), input("Descrição: "), int(input("ID do Usuário: ")))
+            Tarefa.criar(titulo = input("Título: "), descricao = input("Descrição: "), usuario_id = int(input("ID do Usuário: ")))
 
         elif opcao == "4":
             for tarefa in Tarefa.listar():
                 print(tarefa)
 
         elif opcao == "5":
-            Tarefa.atualizar_status(int(input("ID da Tarefa: ")), input("Novo Status: "))
+            Tarefa.atualizar_status(id_tarefa = int(input("ID da Tarefa: ")), novo_status = input("Novo Status: "))
 
         elif opcao == "6":
             exportar_json()
